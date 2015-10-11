@@ -1,0 +1,4 @@
+Contributors
+------------
+
+- Antonio García <agarciadelrio@gmail.com>
