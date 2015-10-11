@@ -1,6 +1,6 @@
 {
   "name": "jra-bs3-jade-mixins",
-  "version": "v1.0.0-beta",
+  "version": "1.0.0",
   "description": "Jade mixins for bootstrap3 and font-awesome",
   "main": "jade/mixins/jra-bs3-mixins.jade",
   "moduleType": [],
