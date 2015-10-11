@@ -1,0 +1,29 @@
+{
+  "name": "jra-bs3-jade-mixins",
+  "version": "v1.0.0-beta",
+  "description": "Jade mixins for bootstrap3 and font-awesome",
+  "main": "jade/mixins/jra-bs3-mixins.jade",
+  "moduleType": [],
+  "keywords": [
+    "jade",
+    "mixins",
+    "bootstrap",
+    "bootstrap3",
+    "font-awesome",
+    "form",
+    "components"
+  ],
+  "authors": [
+    "agarciadelrio <agarciadelrio@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/agarciadelrio/jade-jra-bs3-mixins",
+  "repository": "https://github.com/agarciadelrio/jade-jra-bs3-mixins.git",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

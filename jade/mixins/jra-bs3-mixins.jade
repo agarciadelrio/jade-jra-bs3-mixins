@@ -1,0 +1,50 @@
+mixin bs3_form(disp)
+  - form_disp = disp
+  form(class="form-#{disp}")&attributes(attributes)
+    block
+
+mixin bs3_form_control(model, id, label, opt)
+  - opt = opt || {}
+  - label = label || ''
+  - ind = opt.ind || ''
+  - name = model + '[' + id + ']' + ind
+  if ind=='[]'
+    - ind = ''
+  else
+    if ind!=''
+      - ind = ind.replace(/\[/g, '_').replace(/\]/g, '')
+  - id = model + '_' + id + ind
+  - disp = opt.disp || 'hori'
+  - col = opt.col || 2
+  - rcol = opt.rcol || (12 - col)
+  - form_group_col = opt.form_group_col || null
+  - attributes.type = attributes.type || 'text'
+  if type=='hidden'
+    input(type='hidden' name=name value=value)&attributes(attributes)
+  else
+    .form-group(class=form_group_col)
+      if form_disp=='horizontal'
+        label(for=id class="col-sm-#{col} control-label")= label
+        div(class="col-sm-#{rcol}")
+          +_bs3_input(name, id)&attributes(attributes)
+            block
+      else
+        label(for=id)= label
+        +_bs3_input(name, id)&attributes(attributes)
+          block
+
+mixin _bs3_input(name, id)
+  case attributes.type
+    when 'textarea'
+      textarea.form-control(name=name id=id)&attributes(attributes)= value==false ? '': value
+    when 'select'
+      select.form-control(name=name id=id)&attributes(attributes)
+        block
+    default
+      input.form-control(name=name id=id)&attributes(attributes)
+
+mixin options_for_select(collection, options)
+  - options = options || {}
+  for item in collection
+    - is_sel = options.default == item
+    option(value=item selected=is_sel)= item
