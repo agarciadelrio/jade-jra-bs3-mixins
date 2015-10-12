@@ -19,7 +19,7 @@ mixin bs3_form_control(model, id, label, opt)
   - rcol = opt.rcol || (12 - col)
   - form_group_col = opt.form_group_col || null
   - attributes.type = attributes.type || 'text'
-  if type=='hidden'
+  if attributes.type=='hidden'
     input(type='hidden' name=name value=value)&attributes(attributes)
   else
     .form-group(class=form_group_col)
@@ -48,3 +48,9 @@ mixin options_for_select(collection, options)
   for item in collection
     - is_sel = options.default == item
     option(value=item selected=is_sel)= item
+
+mixin icon(icn, fam)
+  - icn = icn || 'info-sign'
+  - fam = fam || 'glyphicon'
+  span(class="#{fam} #{fam}-#{icn}" aria-hidden="true")&attributes(attributes)
+  block
